@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CPU Scheduling Visualizer</h1>
+            <p>A DSA-based project to simulate and visualize CPU scheduling algorithms.</p>
+        </header>
+        
+        <main class="main-content">
+            <div class="controls-panel">
+                <div class="card">
+                    <h2>1. Add Processes</h2>
+                    <div class="form-group">
+                        <label for="process-name">Process Name</label>
+                        <input type="text" id="process-name" placeholder="e.g., P1" value="P1">
+                    </div>
+                    <div class="form-group">
+                        <label for="arrival-time">Arrival Time</label>
+                        <input type="number" id="arrival-time" min="0" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="burst-time">Burst Time</label>
+                        <input type="number" id="burst-time" min="1" value="5">
+                    </div>
+                    <button id="add-process-btn">Add Process</button>
+                    <button id="add-defaults-btn">Add Default Processes</button>
+                </div>
+
+                <div class="card">
+                    <h2>2. Select Algorithm</h2>
+                    <div class="form-group">
+                        <label for="algorithm-select">Algorithm</label>
+                        <select id="algorithm-select">
+                            <option value="rr">Round Robin (RR)</option>
+                            <option value="srt">Shortest Remaining Time (SRT)</option>
+                            <option value="hrrn">Highest Response Ratio Next (HRRN)</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="quantum-group">
+                        <label for="quantum">Time Quantum</label>
+                        <input type="number" id="quantum" min="1" value="2">
+                    </div>
+                    <div class="button-group">
+                        <button id="run-simulation-btn">Run Simulation</button>
+                        <button id="reset-btn">Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-panel">
+                <div class="card">
+                    <h2>Process Queue</h2>
+                    <table id="process-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Arrival</th>
+                                <th>Burst</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h2>Gantt Chart</h2>
+                    <div id="gantt-chart-container">
+                        <div id="gantt-chart"></div>
+                        <div id="gantt-chart-timeline"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Performance Statistics</h2>
+                    <table id="stats-table">
+                        <thead>
+                            <tr>
+                                <th>Process</th>
+                                <th>Finish</th>
+                                <th>Turnaround</th>
+                                <th>Waiting</th>
+                                <th>Norm. Turnaround</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
