@@ -5,7 +5,7 @@
 A web-based application built with  JavaScript, HTML, and CSS to simulate and visualize fundamental CPU scheduling algorithms. This tool provides an interactive way to understand how different algorithms manage processes.
 
 
-
+Live Demo Link : [Check out the Live Demo!](https://aytida-max.github.io/CPU-Scheduling-Visualizer/)
 ---
 
 
